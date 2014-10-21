@@ -1,5 +1,10 @@
 class Cat < ActiveRecord::Base
+
+  has_secure_password
   validates :name, presence: true, length: { in: 2..255 }
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
+  
 
   scope :visible, -> { where(visible: true) }
   scope :hidden,  -> { where(visble: false) }

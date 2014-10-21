@@ -17,12 +17,13 @@ class CatsController < ApplicationController
   end
 
   def update
-    if @cat.update(cats_params)
+    if @cat.update_attributes(cats_params)
       # http://guides.rubyonrails.org/action_controller_overview.html#the-flash
       flash[:notice] = "Cat updated successfully"
 
       redirect_to cat_path(@cat)
     else
+      p @cat.errors.messages
       flash[:error]  = "Ops! We couldn't update the cat, please review the errors"
 
       render :edit
@@ -38,7 +39,7 @@ class CatsController < ApplicationController
   end
 
   def cats_params
-    params.require(:cat).permit(:name, :birthday)
+    params.require(:cat).permit(:name, :birthday, :email, :password)
   end
 
   # Do you think this is a good place to put this logic?
