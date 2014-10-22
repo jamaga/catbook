@@ -1,5 +1,8 @@
 require "rails_helper"
 
 RSpec.describe CatMailer, :type => :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  test "invite" do
+    assert_equal ['me@example.com'], email.from
+    assert_equal ['friend@example.com'], email.to
+    assert_equal 'You have been invited by @example.com'
 end
