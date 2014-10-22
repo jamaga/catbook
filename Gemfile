@@ -41,6 +41,8 @@ gem 'pundit'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'whenever'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

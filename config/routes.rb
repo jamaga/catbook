@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   root 'registrations#new'
 
-  resources :cats, only: [:index, :show, :edit, :update]
+  resources :cats
 
   get  "/register", to: "registrations#new"
   post "/register", to: "registrations#create"
 
   post   "/login",  to: "login#create"
   delete "/logout", to: "login#destroy"
+
 end

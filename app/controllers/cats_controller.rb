@@ -19,6 +19,11 @@ class CatsController < ApplicationController
     authorize @cat
   end
 
+  def destroy
+    cat = Cat.find(params[:id]).destroy
+    redirect_to cats_path
+  end
+
   def edit
     authorize @cat
   end
@@ -81,6 +86,7 @@ class CatsController < ApplicationController
     #
     # @cat_of_the_month = Cat.find(cat_of_month_id) if cat_of_month_id
   end
+
 
   def deny_access
     # http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
