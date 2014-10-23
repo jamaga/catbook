@@ -1,11 +1,13 @@
 # http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  get 'toy/add'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   root 'registrations#new'
 
-  resources :cats, only: [:index, :show, :edit, :update]
+  resources :cats, only: [:index, :show, :edit, :update, :destroy]
 
   get  "/register", to: "registrations#new"
   post "/register", to: "registrations#create"

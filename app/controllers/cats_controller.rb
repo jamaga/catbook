@@ -19,6 +19,11 @@ class CatsController < ApplicationController
     authorize @cat
   end
 
+  def destroy
+    cat = Cat.find(params[:id]).destroy
+    redirect_to cats_path
+  end
+
   def edit
     authorize @cat
   end

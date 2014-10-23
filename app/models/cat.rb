@@ -18,4 +18,5 @@ class Cat < ActiveRecord::Base
 
   has_many :followers,    -> { visible }, through: :follower_relations, source: :followed
   has_many :followed_by,  -> { visible }, through: :followed_relations, source: :cat
+  has_many :toys
 end
