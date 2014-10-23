@@ -37,6 +37,7 @@ gem 'spring', group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'pundit'
+gem 'faker'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -48,5 +49,4 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
