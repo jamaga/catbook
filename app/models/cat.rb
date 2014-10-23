@@ -20,3 +20,8 @@ class Cat < ActiveRecord::Base
   has_many :followed_by,  -> { visible }, through: :followed_relations, source: :cat
   has_many :toys
 end
+
+
+# def toys
+#   Toys.where(cat_id: self.id)
+# end

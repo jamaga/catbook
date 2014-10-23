@@ -1,0 +1,9 @@
+<h1> toys </h1>
+
+
+<%= @cat.name %>
+<br>
+<% @cat.toys.each do |toy| %>
+	<%= link_to toy.name, cat_toy_path(@cat.id, toy.id) %>
+	<br>
+<% end -%>

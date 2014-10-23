@@ -1,0 +1,7 @@
+<h1> the toy ! </h1>
+
+cat
+
+<%= @toy.name %> belongs to <%= @toy.cat.name  %> <%= link_to @toy.cat.name, cat_path(@toy.cat.id) %>
+
+<%= button_to "delete this toy", cat_toy_path(@toy.cat.id, @toy.id), method: :delete%>

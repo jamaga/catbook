@@ -1,0 +1,6 @@
+<h1> you have created a toy </h1>
+
+<%= form_for [@cat, @toy] do |f| %>
+	<%= f.text_field :name %>
+	<%= f.submit "create a toy" %>
+<% end -%>

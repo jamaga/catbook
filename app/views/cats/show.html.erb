@@ -27,4 +27,6 @@
 
 <%= button_to "DESTROY THIS CAT", cat_path(@cat), method: :delete %>
 <%= link_to "Back", cats_path %>
+<%= link_to "#{@cat.name}'s' toys",  cat_toys_path(@cat.id) %>
+<%= link_to "create toy", new_cat_toy_path(@cat.id) %>
 

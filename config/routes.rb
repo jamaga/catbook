@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   root 'registrations#new'
 
-  resources :cats, only: [:index, :show, :edit, :update, :destroy]
+  resources :cats do
+    resources :toys, only: [:index, :show, :new, :create, :destroy]
+  end
 
   get  "/register", to: "registrations#new"
   post "/register", to: "registrations#create"
