@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   post   "/login",  to: "login#create"
   delete "/logout", to: "login#destroy"
 
+  namespace :api do
+  	namespace :v1 do
+  		resources :cats, only: [:index, :show]
+  	end
+	end
+
 end
